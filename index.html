@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رنا ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+margin:0;
+padding:0;
+height:100vh;
+background:linear-gradient(135deg,#1a1a1a,#000);
+font-family:'Cairo',sans-serif;
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(18px);
+padding:40px 25px;
+border-radius:25px;
+width:90%;
+max-width:400px;
+text-align:center;
+box-shadow:0 0 40px rgba(255,0,90,0.4);
+animation:fade 0.8s ease;
+}
+
+@keyframes fade{
+from{opacity:0; transform:translateY(30px)}
+to{opacity:1; transform:translateY(0)}
+}
+
+h2{color:#ff2d55}
+
+button{
+margin-top:15px;
+padding:14px;
+border:none;
+border-radius:50px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:0.3s;
+}
+
+.yes{
+background:#ff2d55;
+color:white;
+width:60%;
+}
+
+.no{
+background:#333;
+color:white;
+width:35%;
+position:relative;
+}
+
+.group{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+}
+
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:float 6s linear infinite;
+color:#ff2d55aa;
+}
+
+@keyframes float{
+0%{transform:translateY(0);opacity:0}
+50%{opacity:1}
+100%{transform:translateY(-110vh);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="content">
+<h2>رنا ❤️</h2>
+
+<p>
+من دخلتي بحياتي وكل شي صار أحلى…  
+بس عندي سؤال صغير 🥺
+</p>
+
+<h2>تحبيني؟</h2>
+
+<div class="group">
+<button class="yes" onclick="love()">إي طبعاً ❤️</button>
+<button class="no" onmouseover="moveNo(this)">لا 🙈</button>
+</div>
+</div>
+
+<script>
+function love(){
+document.getElementById("content").innerHTML = `
+<h2>رنا 💖</h2>
+<p>
+تدرين شكد أحبج؟  
+أكثر من كل شي بهالدنيا…  
+وكل يوم أتأكد إن قلبي اختارج صح ❤️
+</p>
+<h2>أحبج هواي يا روحي ✨</h2>
+`;
+}
+
+function moveNo(btn){
+btn.style.position="absolute";
+btn.style.left=Math.random()*200+"px";
+btn.style.top=Math.random()*200+"px";
+}
+
+setInterval(()=>{
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(Math.random()*3+4)+"s";
+document.body.appendChild(h);
+setTimeout(()=>h.remove(),6000);
+},400);
+</script>
+
+</body>
+</html>
